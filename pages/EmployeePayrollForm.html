@@ -6,7 +6,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/EmployeePayroll.css">
     <title>Employee Payroll form</title>
-    <script defer src = "../js/EmployeePayrollScript.js"></script>
+    <script defer src = "../js/EmployeePayroll.js"></script>
+    <script defer src="../js/payroll_form.js"></script>   
 </head>
 <body>
     <header class="header-content header">
@@ -19,12 +20,13 @@
         </div>
     </header> 
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save(event)">
+        <form class="form" action="#" onsubmit="save(event);return false">
         <div class="form-head">Employee Payroll form</div>
         <div class="row-content">
             <label class="label text" for="name">Name</label>
             <input class="input" type="text" id="name" name="name"
                       placeholder="Your name.." required>
+            <error-output class="text-error" for="text"></error-output>
         </div>
         <div class="row-content">
             <label class="label text" for="profile">Profile image</label>
@@ -83,7 +85,7 @@
         </div>
         <div class="row-content">
             <label class="label text" for="startDate">Start Date</label>
-            <div>
+            <div id="date">
                 <select id="day" name="Day">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -139,6 +141,7 @@
                     <option value="2016">2016</option>
                 </select>
             </div>
+            <error-output class="date-error" for="text"></error-output>
         </div>
         <div class="row-content">
             <label class="label text" for="notes">Notes</label>
@@ -153,6 +156,5 @@
         </div>
     </form>
     </div>
-    <script src="../js/EmployeePayroll.js"></script>   
 </body>
 </html>
